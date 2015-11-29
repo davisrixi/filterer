@@ -17,32 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCZ-uQ-aS9">
-                                <rect key="frame" x="5" y="223" width="301" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8tB-E7-KVS">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCZ-uQ-aS9">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="DtD-oa-sU9"/>
+                                </constraints>
                                 <state key="normal" title="Show filtered image"/>
                                 <state key="selected" title="Show before image"/>
                                 <connections>
                                     <action selector="onImageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eep-Fg-ZvY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0G-N1-gP3">
-                                <rect key="frame" x="5" y="223" width="301" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Show filtered image"/>
-                                <state key="selected" title="Show before image"/>
-                                <connections>
-                                    <action selector="onImageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UJP-pz-P6D"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8tB-E7-KVS">
-                                <rect key="frame" x="0.0" y="0.0" width="306" height="200"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8tB-E7-KVS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EAN-fs-bFh"/>
+                            <constraint firstItem="KCZ-uQ-aS9" firstAttribute="top" secondItem="8tB-E7-KVS" secondAttribute="bottom" id="JE6-w6-b8E"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KCZ-uQ-aS9" secondAttribute="bottom" id="LnE-yv-zQo"/>
+                            <constraint firstAttribute="trailing" secondItem="8tB-E7-KVS" secondAttribute="trailing" id="Nk4-bd-aWs"/>
+                            <constraint firstAttribute="trailing" secondItem="KCZ-uQ-aS9" secondAttribute="trailing" id="gaf-3Q-ipN"/>
+                            <constraint firstItem="8tB-E7-KVS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jFZ-W4-ZJc"/>
+                            <constraint firstItem="KCZ-uQ-aS9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l46-C5-3Mh"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageToggle" destination="KCZ-uQ-aS9" id="F0q-pI-ywg"/>
