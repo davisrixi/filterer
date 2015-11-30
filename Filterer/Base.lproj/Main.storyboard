@@ -17,125 +17,169 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KGE-bF-eH3">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nay-iF-Zes">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8tB-E7-KVS">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nay-iF-Zes">
-                                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qdq-WZ-hvo">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qdq-WZ-hvo">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCZ-uQ-aS9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="44"/>
-                                                        <animations/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="44" id="CJ2-jJ-raF"/>
-                                                            <constraint firstAttribute="height" constant="44" id="DtD-oa-sU9"/>
-                                                        </constraints>
-                                                        <state key="normal" title="New Photo"/>
-                                                        <state key="selected" title="Show before image"/>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="DtD-oa-sU9"/>
-                                                            </mask>
-                                                        </variation>
-                                                        <connections>
-                                                            <action selector="onImageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eep-Fg-ZvY"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0d-Nh-1Sm">
-                                                        <rect key="frame" x="150" y="0.0" width="150" height="44"/>
-                                                        <animations/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="44" id="USd-4f-3rT"/>
-                                                            <constraint firstAttribute="height" constant="44" id="kdB-aE-0gX"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Filter"/>
-                                                        <state key="selected" title="Show before image"/>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="kdB-aE-0gX"/>
-                                                            </mask>
-                                                        </variation>
-                                                        <connections>
-                                                            <action selector="onImageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NlH-C7-cfr"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2B-ge-dmo">
-                                                        <rect key="frame" x="300" y="0.0" width="150" height="44"/>
-                                                        <animations/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="44" id="DFL-A1-GQf"/>
-                                                            <constraint firstAttribute="height" constant="44" id="ctm-4v-hx4"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Compare"/>
-                                                        <state key="selected" title="Show before image"/>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="DFL-A1-GQf"/>
-                                                            </mask>
-                                                        </variation>
-                                                        <connections>
-                                                            <action selector="onImageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fl4-WF-Gc5"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ik-WK-prJ">
-                                                        <rect key="frame" x="450" y="0.0" width="150" height="44"/>
-                                                        <animations/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="44" id="lBs-lc-39e"/>
-                                                            <constraint firstAttribute="height" constant="44" id="toO-6N-I68"/>
-                                                        </constraints>
-                                                        <state key="normal" title="New Photo"/>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="toO-6N-I68"/>
-                                                            </mask>
-                                                        </variation>
-                                                        <connections>
-                                                            <action selector="onImageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JBs-75-o33"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCZ-uQ-aS9">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="44"/>
                                                 <animations/>
-                                            </stackView>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="CJ2-jJ-raF"/>
+                                                    <constraint firstAttribute="height" constant="44" id="DtD-oa-sU9"/>
+                                                </constraints>
+                                                <state key="normal" title="New Photo"/>
+                                                <state key="selected" title="Show before image"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="DtD-oa-sU9"/>
+                                                    </mask>
+                                                </variation>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0d-Nh-1Sm">
+                                                <rect key="frame" x="150" y="0.0" width="150" height="44"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="USd-4f-3rT"/>
+                                                    <constraint firstAttribute="height" constant="44" id="kdB-aE-0gX"/>
+                                                </constraints>
+                                                <state key="normal" title="Filter"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="kdB-aE-0gX"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="onFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="obv-gy-Hap"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2B-ge-dmo">
+                                                <rect key="frame" x="300" y="0.0" width="150" height="44"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="DFL-A1-GQf"/>
+                                                    <constraint firstAttribute="height" constant="44" id="ctm-4v-hx4"/>
+                                                </constraints>
+                                                <state key="normal" title="Compare"/>
+                                                <state key="selected" title="Show before image"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="DFL-A1-GQf"/>
+                                                    </mask>
+                                                </variation>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ik-WK-prJ">
+                                                <rect key="frame" x="450" y="0.0" width="150" height="44"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="lBs-lc-39e"/>
+                                                    <constraint firstAttribute="height" constant="44" id="toO-6N-I68"/>
+                                                </constraints>
+                                                <state key="normal" title="Share"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="toO-6N-I68"/>
+                                                    </mask>
+                                                </variation>
+                                            </button>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="qdq-WZ-hvo" firstAttribute="top" secondItem="Nay-iF-Zes" secondAttribute="top" id="FWZ-yU-DZn"/>
-                                            <constraint firstAttribute="bottom" secondItem="qdq-WZ-hvo" secondAttribute="bottom" id="Hq8-xQ-HeN"/>
-                                            <constraint firstItem="qdq-WZ-hvo" firstAttribute="leading" secondItem="Nay-iF-Zes" secondAttribute="leading" id="MxI-Yt-cB3"/>
-                                            <constraint firstAttribute="trailing" secondItem="qdq-WZ-hvo" secondAttribute="trailing" id="hul-q0-5nJ"/>
+                                            <constraint firstItem="3Ik-WK-prJ" firstAttribute="top" secondItem="qdq-WZ-hvo" secondAttribute="top" id="Ffa-Tf-DaF"/>
+                                            <constraint firstAttribute="trailing" secondItem="3Ik-WK-prJ" secondAttribute="trailing" id="Osv-tt-fUg"/>
+                                            <constraint firstItem="3Ik-WK-prJ" firstAttribute="leading" secondItem="w2B-ge-dmo" secondAttribute="trailing" id="Zcq-VB-uVR"/>
+                                            <constraint firstAttribute="bottom" secondItem="3Ik-WK-prJ" secondAttribute="bottom" id="tQJ-qa-qzQ"/>
                                         </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
                                 <animations/>
-                            </stackView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="qdq-WZ-hvo" firstAttribute="top" secondItem="Nay-iF-Zes" secondAttribute="top" id="FWZ-yU-DZn"/>
+                                    <constraint firstAttribute="bottom" secondItem="qdq-WZ-hvo" secondAttribute="bottom" id="Hq8-xQ-HeN"/>
+                                    <constraint firstItem="qdq-WZ-hvo" firstAttribute="leading" secondItem="Nay-iF-Zes" secondAttribute="leading" id="MxI-Yt-cB3"/>
+                                    <constraint firstAttribute="trailing" secondItem="qdq-WZ-hvo" secondAttribute="trailing" id="hul-q0-5nJ"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scenery" translatesAutoresizingMaskIntoConstraints="NO" id="8tB-E7-KVS">
+                                <rect key="frame" x="0.0" y="20" width="600" height="528"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="KGE-bF-eH3" secondAttribute="trailing" id="FFb-C5-hx2"/>
-                            <constraint firstItem="KGE-bF-eH3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NZK-JY-q0O"/>
-                            <constraint firstItem="KGE-bF-eH3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YgP-lX-KXm"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KGE-bF-eH3" secondAttribute="bottom" id="kjt-4u-o33"/>
+                            <constraint firstItem="Nay-iF-Zes" firstAttribute="top" secondItem="8tB-E7-KVS" secondAttribute="bottom" constant="8" id="7Pd-Kl-KB5"/>
+                            <constraint firstItem="8tB-E7-KVS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9PU-9z-mOA"/>
+                            <constraint firstItem="Nay-iF-Zes" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GOk-TB-E1V"/>
+                            <constraint firstItem="8tB-E7-KVS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KOW-jZ-BmM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Nay-iF-Zes" secondAttribute="bottom" id="V5Z-u6-iEs"/>
+                            <constraint firstAttribute="trailing" secondItem="8tB-E7-KVS" secondAttribute="trailing" id="Yx5-LK-s3c"/>
+                            <constraint firstAttribute="trailing" secondItem="Nay-iF-Zes" secondAttribute="trailing" id="fJY-m9-43Z"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomMenu" destination="Nay-iF-Zes" id="Bs0-2n-g5s"/>
+                        <outlet property="filterButton" destination="l0d-Nh-1Sm" id="nnZ-pj-aYC"/>
                         <outlet property="imageToggle" destination="KCZ-uQ-aS9" id="F0q-pI-ywg"/>
                         <outlet property="imageView" destination="8tB-E7-KVS" id="O3j-KK-YcB"/>
+                        <outlet property="secondaryMenu" destination="b1Z-SE-v6R" id="ziv-U4-YDs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="b1Z-SE-v6R">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ems-rO-VWp">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRp-bf-fPZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
+                                    <animations/>
+                                    <state key="normal" title="Red"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWD-ZD-NPZ">
+                                    <rect key="frame" x="48" y="0.0" width="48" height="128"/>
+                                    <animations/>
+                                    <state key="normal" title="Green"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgc-PB-R3y">
+                                    <rect key="frame" x="96" y="0.0" width="48" height="128"/>
+                                    <animations/>
+                                    <state key="normal" title="Blue"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqc-qc-9gt">
+                                    <rect key="frame" x="144" y="0.0" width="48" height="128"/>
+                                    <animations/>
+                                    <state key="normal" title="Yellow"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NY3-xb-rdd">
+                                    <rect key="frame" x="192" y="0.0" width="48" height="128"/>
+                                    <animations/>
+                                    <state key="normal" title="Purple"/>
+                                </button>
+                            </subviews>
+                            <animations/>
+                        </stackView>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="ems-rO-VWp" firstAttribute="leading" secondItem="b1Z-SE-v6R" secondAttribute="leading" id="0wT-Hy-Oqk"/>
+                        <constraint firstAttribute="bottom" secondItem="ems-rO-VWp" secondAttribute="bottom" id="ZrG-eG-d25"/>
+                        <constraint firstAttribute="trailing" secondItem="ems-rO-VWp" secondAttribute="trailing" id="ohv-cY-fCp"/>
+                        <constraint firstItem="ems-rO-VWp" firstAttribute="top" secondItem="b1Z-SE-v6R" secondAttribute="top" id="tAV-Pt-WSX"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="215" y="363"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="scenery" width="200" height="136"/>
+    </resources>
 </document>
