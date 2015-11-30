@@ -17,34 +17,115 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8tB-E7-KVS">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KGE-bF-eH3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8tB-E7-KVS">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nay-iF-Zes">
+                                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qdq-WZ-hvo">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCZ-uQ-aS9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="44"/>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="CJ2-jJ-raF"/>
+                                                            <constraint firstAttribute="height" constant="44" id="DtD-oa-sU9"/>
+                                                        </constraints>
+                                                        <state key="normal" title="New Photo"/>
+                                                        <state key="selected" title="Show before image"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="DtD-oa-sU9"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="onImageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eep-Fg-ZvY"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0d-Nh-1Sm">
+                                                        <rect key="frame" x="150" y="0.0" width="150" height="44"/>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="USd-4f-3rT"/>
+                                                            <constraint firstAttribute="height" constant="44" id="kdB-aE-0gX"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Filter"/>
+                                                        <state key="selected" title="Show before image"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="kdB-aE-0gX"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="onImageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NlH-C7-cfr"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2B-ge-dmo">
+                                                        <rect key="frame" x="300" y="0.0" width="150" height="44"/>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="DFL-A1-GQf"/>
+                                                            <constraint firstAttribute="height" constant="44" id="ctm-4v-hx4"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Compare"/>
+                                                        <state key="selected" title="Show before image"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="DFL-A1-GQf"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="onImageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fl4-WF-Gc5"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ik-WK-prJ">
+                                                        <rect key="frame" x="450" y="0.0" width="150" height="44"/>
+                                                        <animations/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="lBs-lc-39e"/>
+                                                            <constraint firstAttribute="height" constant="44" id="toO-6N-I68"/>
+                                                        </constraints>
+                                                        <state key="normal" title="New Photo"/>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="toO-6N-I68"/>
+                                                            </mask>
+                                                        </variation>
+                                                        <connections>
+                                                            <action selector="onImageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JBs-75-o33"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <animations/>
+                                            </stackView>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="qdq-WZ-hvo" firstAttribute="top" secondItem="Nay-iF-Zes" secondAttribute="top" id="FWZ-yU-DZn"/>
+                                            <constraint firstAttribute="bottom" secondItem="qdq-WZ-hvo" secondAttribute="bottom" id="Hq8-xQ-HeN"/>
+                                            <constraint firstItem="qdq-WZ-hvo" firstAttribute="leading" secondItem="Nay-iF-Zes" secondAttribute="leading" id="MxI-Yt-cB3"/>
+                                            <constraint firstAttribute="trailing" secondItem="qdq-WZ-hvo" secondAttribute="trailing" id="hul-q0-5nJ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCZ-uQ-aS9">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="DtD-oa-sU9"/>
-                                </constraints>
-                                <state key="normal" title="Show filtered image"/>
-                                <state key="selected" title="Show before image"/>
-                                <connections>
-                                    <action selector="onImageToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eep-Fg-ZvY"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8tB-E7-KVS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EAN-fs-bFh"/>
-                            <constraint firstItem="KCZ-uQ-aS9" firstAttribute="top" secondItem="8tB-E7-KVS" secondAttribute="bottom" id="JE6-w6-b8E"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KCZ-uQ-aS9" secondAttribute="bottom" id="LnE-yv-zQo"/>
-                            <constraint firstAttribute="trailing" secondItem="8tB-E7-KVS" secondAttribute="trailing" id="Nk4-bd-aWs"/>
-                            <constraint firstAttribute="trailing" secondItem="KCZ-uQ-aS9" secondAttribute="trailing" id="gaf-3Q-ipN"/>
-                            <constraint firstItem="8tB-E7-KVS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jFZ-W4-ZJc"/>
-                            <constraint firstItem="KCZ-uQ-aS9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l46-C5-3Mh"/>
+                            <constraint firstAttribute="trailing" secondItem="KGE-bF-eH3" secondAttribute="trailing" id="FFb-C5-hx2"/>
+                            <constraint firstItem="KGE-bF-eH3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NZK-JY-q0O"/>
+                            <constraint firstItem="KGE-bF-eH3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YgP-lX-KXm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KGE-bF-eH3" secondAttribute="bottom" id="kjt-4u-o33"/>
                         </constraints>
                     </view>
                     <connections>
