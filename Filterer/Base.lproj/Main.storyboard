@@ -37,6 +37,9 @@
                                                         <exclude reference="DtD-oa-sU9"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="onNewPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="94m-Z5-zjT"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0d-Nh-1Sm">
                                                 <rect key="frame" x="150" y="0.0" width="150" height="44"/>
@@ -124,7 +127,6 @@
                     <connections>
                         <outlet property="bottomMenu" destination="Nay-iF-Zes" id="Bs0-2n-g5s"/>
                         <outlet property="filterButton" destination="l0d-Nh-1Sm" id="nnZ-pj-aYC"/>
-                        <outlet property="imageToggle" destination="KCZ-uQ-aS9" id="F0q-pI-ywg"/>
                         <outlet property="imageView" destination="8tB-E7-KVS" id="O3j-KK-YcB"/>
                         <outlet property="secondaryMenu" destination="b1Z-SE-v6R" id="ziv-U4-YDs"/>
                     </connections>
@@ -177,6 +179,66 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="215" y="363"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Gbz-4B-hS2">
+            <objects>
+                <viewController id="vwZ-2T-vIx" customClass="TableViewController" customModule="Filterer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TOE-12-aIX"/>
+                        <viewControllerLayoutGuide type="bottom" id="kQU-oT-rk9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2BI-tE-fkp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W34-vD-aH4">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterCell" textLabel="W8v-NV-R3H" style="IBUITableViewCellStyleDefault" id="H1I-P3-JH6">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H1I-P3-JH6" id="IQ1-nD-lry">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Filter name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W8v-NV-R3H">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vwZ-2T-vIx" id="5DZ-yc-Ww4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="W34-vD-aH4" firstAttribute="leading" secondItem="2BI-tE-fkp" secondAttribute="leading" id="Ah3-29-FWc"/>
+                            <constraint firstItem="W34-vD-aH4" firstAttribute="top" secondItem="TOE-12-aIX" secondAttribute="bottom" id="Kvo-C2-Vy5"/>
+                            <constraint firstItem="kQU-oT-rk9" firstAttribute="top" secondItem="W34-vD-aH4" secondAttribute="bottom" id="S5b-eb-HxU"/>
+                            <constraint firstAttribute="trailing" secondItem="W34-vD-aH4" secondAttribute="trailing" id="sSW-xX-Uhe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="W34-vD-aH4" id="VH3-GM-qdv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xsJ-bz-Yku" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961" y="363"/>
         </scene>
     </scenes>
     <resources>

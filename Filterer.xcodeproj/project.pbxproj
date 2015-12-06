@@ -15,6 +15,7 @@
 		721F902E1BF53C8600414955 /* FiltererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F902D1BF53C8600414955 /* FiltererTests.swift */; };
 		721F90391BF53C8600414955 /* FiltererUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F90381BF53C8600414955 /* FiltererUITests.swift */; };
 		721F90471BF5439B00414955 /* RGBAImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F90461BF5439B00414955 /* RGBAImage.swift */; };
+		72912EF81C112F8E008D2A9D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72912EF71C112F8E008D2A9D /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		721F90381BF53C8600414955 /* FiltererUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltererUITests.swift; sourceTree = "<group>"; };
 		721F903A1BF53C8600414955 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		721F90461BF5439B00414955 /* RGBAImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBAImage.swift; sourceTree = "<group>"; };
+		72912EF71C112F8E008D2A9D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				721F90181BF53C8600414955 /* AppDelegate.swift */,
 				721F901A1BF53C8600414955 /* ViewController.swift */,
+				72912EF71C112F8E008D2A9D /* TableViewController.swift */,
 				721F901C1BF53C8600414955 /* Main.storyboard */,
 				721F901F1BF53C8600414955 /* Assets.xcassets */,
 				721F90211BF53C8600414955 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 				721F901B1BF53C8600414955 /* ViewController.swift in Sources */,
 				721F90471BF5439B00414955 /* RGBAImage.swift in Sources */,
 				721F90191BF53C8600414955 /* AppDelegate.swift in Sources */,
+				72912EF81C112F8E008D2A9D /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +492,7 @@
 				721F903F1BF53C8600414955 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		721F90401BF53C8600414955 /* Build configuration list for PBXNativeTarget "FiltererTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +501,7 @@
 				721F90421BF53C8600414955 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		721F90431BF53C8600414955 /* Build configuration list for PBXNativeTarget "FiltererUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +510,7 @@
 				721F90451BF53C8600414955 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
