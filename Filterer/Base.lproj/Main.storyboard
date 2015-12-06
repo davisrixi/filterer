@@ -86,6 +86,9 @@
                                                         <exclude reference="toO-6N-I68"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="onShare:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tXo-ge-G9j"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <animations/>

@@ -39,6 +39,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
+    
+    @IBAction func onShare(sender: AnyObject) {
+        let activityController = UIActivityViewController(activityItems: ["Check out our really cool app",imageView.image!], applicationActivities: nil)
+        presentViewController(activityController, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func onNewPhoto(sender: AnyObject) {
         let actionSheet = UIAlertController(title: "New Photo", message: nil, preferredStyle: .ActionSheet)
         
