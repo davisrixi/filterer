@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -109,7 +109,7 @@
                                     <constraint firstAttribute="trailing" secondItem="qdq-WZ-hvo" secondAttribute="trailing" id="hul-q0-5nJ"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scenery" translatesAutoresizingMaskIntoConstraints="NO" id="8tB-E7-KVS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8tB-E7-KVS">
                                 <rect key="frame" x="0.0" y="20" width="600" height="528"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -146,11 +146,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="48" height="128"/>
                                     <animations/>
                                     <state key="normal" title="Red"/>
+                                    <connections>
+                                        <action selector="onFilterRed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGn-d9-3od"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWD-ZD-NPZ">
                                     <rect key="frame" x="48" y="0.0" width="48" height="128"/>
                                     <animations/>
                                     <state key="normal" title="Green"/>
+                                    <connections>
+                                        <action selector="onFilterGreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RZo-er-IvS"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgc-PB-R3y">
                                     <rect key="frame" x="96" y="0.0" width="48" height="128"/>
@@ -244,7 +250,4 @@
             <point key="canvasLocation" x="961" y="363"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="scenery" width="200" height="136"/>
-    </resources>
 </document>

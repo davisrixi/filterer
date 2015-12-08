@@ -12,6 +12,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     var filteredImage: UIImage?
     
+    var avgs: [Int]?
+    
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var imageToggle: UIButton!
@@ -23,6 +25,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var filterButton: UIButton!
     
     @IBAction func onImageToggle(sender: UIButton) {
+        
         if imageToggle.selected{
             let image = UIImage(named: "scenery")!
             imageView.image = image
@@ -37,8 +40,102 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    
+    func getAvgs(rgbaImage: RGBAImage) -> [Int]{
+        
+        let pixelCount = rgbaImage.width * rgbaImage.height
+        var totalRed = 0
+        var totalGreen = 0
+        var totalBlue = 0
+        
+        for y in 0..<rgbaImage.height{
+            for x in 0..<rgbaImage.width{
+                let index = y * rgbaImage.width + x
+                var pixel = rgbaImage.pixels[index]
+                
+                totalRed += Int(pixel.red)
+                totalGreen += Int(pixel.green)
+                totalBlue += Int(pixel.blue)
+            }
+        }
+        
+        let avgRed = totalRed / pixelCount
+        let avgGreen = totalGreen / pixelCount
+        let avgBlue = totalBlue / pixelCount
+        
+        let avgs = [avgRed,avgGreen,avgBlue]
+        return avgs;
+    }
+
     
     
+    func setFilterRed(avgs: [Int],rgbaImage: RGBAImage, var modifier: Int, redLevel: Int) -> UIImage{
+        
+        let avgRed = avgs[0]//getting red average
+        
+        for y in 0..<rgbaImage.height{
+            for x in 0..<rgbaImage.width{
+                let index = y*rgbaImage.width + x
+                var pixel = rgbaImage.pixels[index]
+                
+                let redDelta = Int(pixel.red) - avgRed
+                
+                if(Int(pixel.red) < avgRed){
+                    modifier = redLevel
+                }
+                
+                pixel.red = UInt8(max(min(255,avgRed + modifier * redDelta),0))
+                rgbaImage.pixels[index] = pixel
+                
+            }
+        }
+        
+        let newImage = rgbaImage.toUIImage()!
+        imageView.image = newImage
+        return newImage;
+    }
+    
+    
+    func setFilterGreen(avgs: [Int],rgbaImage: RGBAImage, var modifier: Int, greenLevel: Int) -> UIImage{
+        
+        let avgGreen = avgs[2]//getting green average
+        
+        for y in 0..<rgbaImage.height{
+            for x in 0..<rgbaImage.width{
+                let index = y*rgbaImage.width + x
+                var pixel = rgbaImage.pixels[index]
+                
+                let greenDelta = Int(pixel.green) - avgGreen
+                
+                if(Int(pixel.green) < avgGreen){
+                    modifier = greenLevel
+                }
+                
+                pixel.green = UInt8(max(min(255,avgGreen + modifier * greenDelta),0))
+                rgbaImage.pixels[index] = pixel
+                
+            }
+        }
+        
+        let newImage = rgbaImage.toUIImage()!
+        imageView.image = newImage
+        return newImage;
+    }
+    
+    
+    @IBAction func onFilterRed(sender: AnyObject) {
+        let image = imageView.image!
+        let rgbaImage = RGBAImage(image: image)!
+        setFilterRed(avgs!, rgbaImage: rgbaImage, modifier: 1, redLevel: 2)
+    }
+
+    @IBAction func onFilterGreen(sender: AnyObject) {
+        let image = imageView.image!
+        let rgbaImage = RGBAImage(image: image)!
+        setFilterGreen(avgs!, rgbaImage: rgbaImage, modifier: 1, greenLevel: 2)
+
+    }
     
     @IBAction func onShare(sender: AnyObject) {
         let activityController = UIActivityViewController(activityItems: ["Check out our really cool app",imageView.image!], applicationActivities: nil)
@@ -85,16 +182,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
     dismissViewControllerAnimated(true, completion: nil)
     if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
-    imageView.image = image
-    }
+        imageView.image = image
+        let rgbaImage = RGBAImage(image: image)!
+        avgs = getAvgs(rgbaImage)
+        }
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-    dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,6 +245,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 }
         }
     }
+    
+   
     
 }
 
