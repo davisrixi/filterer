@@ -24,6 +24,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var filterButton: UIButton!
     
+    @IBOutlet weak var compareButton: UIButton!
+    
+    var originalImage: RGBAImage!
+    var filtered: RGBAImage!
+
+    
     @IBAction func onImageToggle(sender: UIButton) {
         
         if imageToggle.selected{
@@ -69,8 +75,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     
-    
-    func setFilterRed(avgs: [Int],rgbaImage: RGBAImage, var modifier: Int, redLevel: Int) -> UIImage{
+    func setFilterRed(avgs: [Int],rgbaImage: RGBAImage, var modifier: Int, redLevel: Int) -> RGBAImage{
         
         let avgRed = avgs[0]//getting red average
         
@@ -91,13 +96,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
         
-        let newImage = rgbaImage.toUIImage()!
-        imageView.image = newImage
-        return newImage;
+        return rgbaImage;
     }
     
     
-    func setFilterGreen(avgs: [Int],rgbaImage: RGBAImage, var modifier: Int, greenLevel: Int) -> UIImage{
+    func setFilterGreen(avgs: [Int],rgbaImage: RGBAImage, var modifier: Int, greenLevel: Int) -> RGBAImage{
         
         let avgGreen = avgs[2]//getting green average
         
@@ -117,24 +120,49 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 
             }
         }
-        
-        let newImage = rgbaImage.toUIImage()!
-        imageView.image = newImage
-        return newImage;
+
+        return rgbaImage;
     }
+    
+    func setFilter(filtName: String,avgs: [Int], modifier: Int, level: Int){
+        
+        let image = imageView.image!
+        let rgbaImage = RGBAImage(image: image)!
+        var img : RGBAImage
+        if filtName == "red" {
+            img = setFilterRed(self.avgs!, rgbaImage: rgbaImage, modifier: modifier, redLevel: level)
+            imageView.image = img.toUIImage()
+
+
+        }
+        if filtName == "green" {
+             img = setFilterGreen(self.avgs!, rgbaImage: rgbaImage, modifier: modifier, greenLevel:level)
+            imageView.image = img.toUIImage()
+
+        }
+        
+            compareButton.enabled = true
+        
+        hideSecondaryMenu()
+        
+    }
+
     
     
     @IBAction func onFilterRed(sender: AnyObject) {
-        let image = imageView.image!
-        let rgbaImage = RGBAImage(image: image)!
-        setFilterRed(avgs!, rgbaImage: rgbaImage, modifier: 1, redLevel: 2)
+        setFilter("red", avgs: avgs!, modifier: 1, level: 2)
     }
 
     @IBAction func onFilterGreen(sender: AnyObject) {
-        let image = imageView.image!
-        let rgbaImage = RGBAImage(image: image)!
-        setFilterGreen(avgs!, rgbaImage: rgbaImage, modifier: 1, greenLevel: 2)
+        setFilter("red", avgs: avgs!, modifier: 1, level: 2)
 
+    }
+    
+    
+    @IBAction func onCompare(sender: AnyObject){
+        let newImage = originalImage.toUIImage()!
+        imageView.image = newImage
+        hideSecondaryMenu()
     }
     
     @IBAction func onShare(sender: AnyObject) {
@@ -185,6 +213,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imageView.image = image
         let rgbaImage = RGBAImage(image: image)!
         avgs = getAvgs(rgbaImage)
+        originalImage = rgbaImage
         }
     }
     
@@ -200,6 +229,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         secondaryMenu.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
         secondaryMenu.translatesAutoresizingMaskIntoConstraints = false
+        compareButton.enabled = false
         
         
     }

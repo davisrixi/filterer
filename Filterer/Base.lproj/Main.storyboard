@@ -56,6 +56,7 @@
                                                 </variation>
                                                 <connections>
                                                     <action selector="onFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="obv-gy-Hap"/>
+                                                    <action selector="unselectFilterButton:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="1gV-Bl-rr9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2B-ge-dmo">
@@ -72,6 +73,9 @@
                                                         <exclude reference="DFL-A1-GQf"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="onCompare:" destination="BYZ-38-t0r" eventType="touchDown" id="016-IC-2q9"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ik-WK-prJ">
                                                 <rect key="frame" x="450" y="0.0" width="150" height="44"/>
@@ -129,6 +133,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomMenu" destination="Nay-iF-Zes" id="Bs0-2n-g5s"/>
+                        <outlet property="compareButton" destination="w2B-ge-dmo" id="1Qf-WV-zMR"/>
                         <outlet property="filterButton" destination="l0d-Nh-1Sm" id="nnZ-pj-aYC"/>
                         <outlet property="imageView" destination="8tB-E7-KVS" id="O3j-KK-YcB"/>
                         <outlet property="secondaryMenu" destination="b1Z-SE-v6R" id="ziv-U4-YDs"/>
